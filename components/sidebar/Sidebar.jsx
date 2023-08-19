@@ -16,16 +16,18 @@ const Sidebar = () => {
         <span className="w-full">
           {sidebar?.map((item) => {
             return (
-              <span key={item.name} className="menu-item py-5 ps-9">
-                <Image
-                  src={item.icon}
-                  width={24}
-                  height={24}
-                  priority
-                  alt="holaHomeBlack"
-                />
-                <p className="text-sm font-semibold"><Link href={item.link}>{item.name}</Link></p>
-              </span>
+              <Link href={item.link}>
+                <span key={item.name} className="menu-item py-5 ps-9">
+                  <Image
+                    src={item.icon}
+                    width={24}
+                    height={24}
+                    priority
+                    alt="holaHomeBlack"
+                  />
+                  <p className="text-sm font-semibold">{item.name}</p>
+                </span>
+              </Link>
             );
           })}
         </span>

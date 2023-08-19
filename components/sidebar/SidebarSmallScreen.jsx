@@ -62,18 +62,20 @@ const SidebarSmallScreen = () => {
           <span className="w-full">
             {sidebar?.map((item) => {
               return (
-                <span key={item.name} className="menu-item py-3 ps-5">
-                  <Image
-                    src={item.icon}
-                    width={20}
-                    height={20}
-                    priority
-                    alt="holaHomeBlack"
-                  />
-                  <p className="text-sm" onClick={() => setModal(false)}>
-                    <Link href={item.link}>{item.name}</Link>
-                  </p>
-                </span>
+                <Link href={item.link} key={item.name}>
+                  <span  className="menu-item py-3 ps-5">
+                    <Image
+                      src={item.icon}
+                      width={20}
+                      height={20}
+                      priority
+                      alt="holaHomeBlack"
+                    />
+                    <p className="text-sm" onClick={() => setModal(false)}>
+                      {item.name}
+                    </p>
+                  </span>
+                </Link>
               );
             })}
           </span>
