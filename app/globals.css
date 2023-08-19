@@ -2,30 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-.main_page{
-  @apply flex min-h-screen
+/* ham menue */
+.ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-.flex-center{
-  @apply flex items-center justify-center
+
+.hamRotate.active {
+  transform: rotate(45deg);
 }
-.flex-col-center{
-  @apply flex flex-col items-center justify-center
+
+.line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: #ffe471;
+  stroke-width: 5.5;
+  stroke-linecap: round;
 }
-.input-span{
-  @apply border py-2 text-xs md:text-sm px-4 rounded-md
+.ham1 .top {
+  stroke-dasharray: 40 139;
 }
-.lable{
-  @apply text-xs md:text-sm font-normal
+.ham1 .bottom {
+  stroke-dasharray: 40 180;
 }
-.form-div{
-  @apply flex flex-col space-y-1 md:space-y-3
+.ham1.active .top {
+  stroke-dashoffset: -98px;
 }
-.login-frame{
-  @apply w-[336px] md:w-[440px] border px-6 py-8 rounded-md space-y-8
+.ham1.active .bottom {
+  stroke-dashoffset: -138px;
 }
-.login-form{
-  @apply flex flex-col space-y-3 md:space-y-6
+
+/* Tailwindcss */
+
+.main_page {
+  @apply flex min-h-screen;
 }
-.login-button{
-  @apply text-sm font-bold text-white bg-[#F9C900] py-2 md:py-3 rounded-md
+.flex-center {
+  @apply flex items-center justify-center;
+}
+.flex-col-center {
+  @apply flex flex-col items-center justify-center;
+}
+.flex-col-start{
+  @apply flex flex-col items-start justify-start
+}
+.input-span {
+  @apply border py-2 text-xs md:text-sm px-4 rounded-md;
+}
+.lable {
+  @apply text-xs md:text-sm font-normal;
+}
+.form-div {
+  @apply flex flex-col space-y-1 md:space-y-3;
+}
+.login-frame {
+  @apply w-[336px] md:w-[440px] border px-6 py-8 rounded-md space-y-8;
+}
+.login-form {
+  @apply flex flex-col space-y-3 md:space-y-6;
+}
+.login-button {
+  @apply text-sm font-bold text-white bg-[#F9C900] py-2 md:py-3 rounded-md;
+}
+.cards {
+  @apply flex-center translate-x-1 md:translate-x-2 p-2 bg-white space-x-5 md:space-x-10  w-[160px]  md:w-[300px] md:h-[130px] lg:w-[170px] xl:w-[268px] rounded-xl shadow-md;
+}
+.menu-modal {
+  @apply shadow-2xl shadow-[#202742] w-[200px] left-0 top-0 bg-white h-screen absolute lg:hidden z-40;
+}
+.menu-item {
+  @apply flex space-x-3 hover:bg-[#FFE471];
+}
+.sidebar{
+  @apply min-w-[240px] h-screen border hidden lg:block shadow-lg
 }

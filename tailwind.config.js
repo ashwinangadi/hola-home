@@ -4,8 +4,9 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './dashboard/**/*.{js,ts,jsx,tsx,mdx}',
+    './dashboardPages/**/*.{js,ts,jsx,tsx,mdx}',
     './emailPassLogin/**/*.{js,ts,jsx,tsx,mdx}',
+    './sidebar/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
