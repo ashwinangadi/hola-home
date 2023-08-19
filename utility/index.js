@@ -2,18 +2,22 @@ export const sidebar = [
   {
     icon: "/dashboardIcon.svg",
     name: "Dashboard",
+    link: "/dashboard"
   },
   {
     icon: "/mUserIcon.svg",
     name: "Manage Users",
+    link: "/manage_user"
   },
   {
     icon: "/notificationIcon.svg",
     name: "Notification",
+    link: "/notification"
   },
   {
     icon: "/logoutIcon.svg",
     name: "Logout",
+    link: "/dashboard"
   },
 ];
 

@@ -1,5 +1,6 @@
 import { sidebar } from "@/utility";
 import Image from "next/image";
+import Link from "next/link";
 
 const Sidebar = () => {
   return (
@@ -23,7 +24,7 @@ const Sidebar = () => {
                   priority
                   alt="holaHomeBlack"
                 />
-                <p className="text-sm font-semibold">{item.name}</p>
+                <p className="text-sm font-semibold"><Link href={item.link}>{item.name}</Link></p>
               </span>
             );
           })}

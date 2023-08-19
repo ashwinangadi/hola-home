@@ -1,15 +1,16 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const ForgotPassword = () => {
   return (
-    <section className="flex-col-center space-y-4">
-      <Image
+    <section className="flex-col-center space-y-4 min-h-screen">
+      <Link href="/"><Image
         src="/holaHomeBlack.png"
         width={235}
         height={135}
         priority
         alt="hide/visible"
-      />
+      /></Link>
       <p className="text-base">Admin Panel</p>
       <div className="login-frame ">
         <p className="text-base md:text-xl">Forgot password?</p>
@@ -30,7 +31,7 @@ const ForgotPassword = () => {
             </span>
           </div>
           <button type="submit" className="login-button">
-            Submit
+            <Link href="/login/resetPass">Submit</Link>
           </button>
         </form>
       </div>
@@ -38,4 +39,4 @@ const ForgotPassword = () => {
   );
 };
 
-export default ForgotPassword ;
+export default ForgotPassword;

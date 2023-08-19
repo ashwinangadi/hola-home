@@ -1,4 +1,6 @@
+"use client"
 import Image from "next/image";
+import Link from "next/link";
 
 const LoginPage = () => {
   return (
@@ -43,13 +45,13 @@ const LoginPage = () => {
               />
               <Image
                 src="/makeVisible.svg"
-                width={14}
-                height={14}
+                width={16}
+                height={16}
                 alt="hide/visible"
-                className="pointer"
+                className="cursor-pointer"
               />
             </span>
-            <p className="text-end text-xs text-[#F9C900]">Forgot password?</p>
+            <p className="text-end text-xs text-[#F9C900] cursor-pointer" ><Link href="/login/forgotPassword">Forgot password?</Link></p>
           </div>
           <button type="submit" className="login-button">
             Submit

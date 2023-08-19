@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const ResetPass = () => {
   return (
-    <section className="flex-col-center text-center space-y-4 md:space-y-6">
+    <section className="flex-col-center text-center space-y-4 md:space-y-6 min-h-screen">
       <Image
         src="/mailWithCircles.png"
         width={65}
@@ -16,13 +17,13 @@ const ResetPass = () => {
         <p>johndoe@gmail.com</p>
       </span>
       <span className="flex-center space-x-5 text-[#828282] text-sm md:text-lg font-normal">
-        <Image
+      <Link href="/"><Image
           src="/arrowBack.svg"
           width={25}
           height={25}
           alt="hide/visible"
-        />
-        <p>Back to log in</p>
+        /></Link>
+        <Link href="/"><p>Back to log in</p></Link>
       </span>
     </section>
   );

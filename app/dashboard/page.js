@@ -1,12 +1,12 @@
-import Content from "@/dashboardPages/Dashboard";
-import Sidebar from "@/sidebar/Sidebar";
 
+import Sidebar from "@/components/sidebar/Sidebar";
+import Analytics from "@/pages/dashboardPages/Analytics";
 
 const Dashboard = () => {
   return (
     <section className="flex">
       <Sidebar />
-      <Content />
+      <Analytics />
     </section>
   );
 };

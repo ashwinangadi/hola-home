@@ -1,6 +1,7 @@
 "use client";
 import { sidebar } from "@/utility";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const SidebarSmallScreen = () => {
@@ -70,7 +71,7 @@ const SidebarSmallScreen = () => {
                     alt="holaHomeBlack"
                   />
                   <p className="text-sm" onClick={() => setModal(false)}>
-                    {item.name}
+                    <Link href={item.link}>{item.name}</Link>
                   </p>
                 </span>
               );

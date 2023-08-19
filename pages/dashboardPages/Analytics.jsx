@@ -1,12 +1,13 @@
-import SidebarSmallScreen from "@/sidebar/SidebarSmallScreen";
+import Header from "@/components/Header/Header";
+import SidebarSmallScreen from "@/components/sidebar/SidebarSmallScreen";
 import { cards } from "@/utility";
 import Image from "next/image";
 
-const Dashboard = () => {
+const Analytics = () => {
   return (
     <section className="w-full space-y-10">
       {/* py-8 px-12 */}
-      <header className="flex justify-between px-5 md:px-12 items-center h-14 md:h-24 shadow-sm ">
+      {/* <header className="flex justify-between px-5 md:px-12 items-center h-14 md:h-24 shadow-sm ">
         <span className="flex-center">
           <SidebarSmallScreen />
           <h1 className="text-sm md:text-[22px] font-semibold">Dashboard</h1>
@@ -17,7 +18,6 @@ const Dashboard = () => {
             <Image src="/refreshIcon.svg" width={24} height={24} alt="icon" />
           </button>
         </span>
-
         <Image
           src="/refreshIcon.svg"
           width={24}
@@ -25,7 +25,8 @@ const Dashboard = () => {
           alt="icon"
           className="block lg:hidden"
         />
-      </header>
+      </header> */}
+      <Header name="Dasboard" />
       <div className="grid grid-cols-2 lg:grid-cols-4 justify-items-center gap-3 md:gap-10 px-[25px] md:px-[50px]">
         {cards?.map((item) => {
           return (
@@ -52,4 +53,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Analytics;
