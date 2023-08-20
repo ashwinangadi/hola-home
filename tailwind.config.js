@@ -5,7 +5,7 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './dashboardPages/**/*.{js,ts,jsx,tsx,mdx}',
-    './emailPassLogin/**/*.{js,ts,jsx,tsx,mdx}',
+    './context/**/*.{js,ts,jsx,tsx,mdx}',
     './sidebar/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {

@@ -1,6 +1,7 @@
-import { sidebar } from "@/utility";
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import signOutUser from "@/firebase/auth/signout";
 
 const Sidebar = () => {
   return (
@@ -13,24 +14,60 @@ const Sidebar = () => {
           priority
           alt="holaHomeBlack"
         />
-        <span className="w-full">
-          {sidebar?.map((item) => {
-            return (
-              <Link href={item.link}>
-                <span key={item.name} className="menu-item py-5 ps-9">
-                  <Image
-                    src={item.icon}
-                    width={24}
-                    height={24}
-                    priority
-                    alt="holaHomeBlack"
-                  />
-                  <p className="text-sm font-semibold">{item.name}</p>
-                </span>
-              </Link>
-            );
-          })}
-        </span>
+        <ul className="w-full">
+          <Link href="/dashboard">
+            <li className="menu-item py-5 ps-9">
+              <Image
+                src="/dashboardIcon.svg"
+                width={24}
+                height={24}
+                priority
+                alt="holaHomeBlack"
+              />
+              <p className="text-sm font-semibold">Dashboard</p>
+            </li>
+          </Link>
+          <Link href="/manage_user">
+            <li className="menu-item py-5 ps-9">
+              <Image
+                src="/mUserIcon.svg"
+                width={24}
+                height={24}
+                priority
+                alt="holaHomeBlack"
+              />
+              <p className="text-sm font-semibold">Manage Users</p>
+            </li>
+          </Link>
+          <Link href="/notification">
+            <li className="menu-item py-5 ps-9">
+              <Image
+                src="/notificationIcon.svg"
+                width={24}
+                height={24}
+                priority
+                alt="holaHomeBlack"
+              />
+              <p className="text-sm font-semibold">Notification</p>
+            </li>
+          </Link>
+
+          <Link href="/">
+            <li
+              className="menu-item py-5 ps-9 cursor-pointer"
+              onClick={async () => await signOutUser()}
+            >
+              <Image
+                src="/logoutIcon.svg"
+                width={24}
+                height={24}
+                priority
+                alt="holaHomeBlack"
+              />
+              <p className="text-sm font-semibold">Logout</p>
+            </li>
+          </Link>
+        </ul>
       </div>
     </section>
   );

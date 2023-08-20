@@ -1,31 +1,25 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
-
-import React, { useState } from "react";
-import signIn from "@/firebase/auth/signIn";
+import React from "react";
+import signUp from "@/firebase/auth/signup";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import Button from "@/components/button/Button";
+import Image from "next/image";
 
-const LoginPage = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+function Page() {
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
   const router = useRouter();
 
   const handleForm = async (event) => {
     event.preventDefault();
-
-    const { result, error } = await signIn(email, password);
-
+    const { result, error } = await signUp(email, password);
     if (error) {
       return console.log(error);
     }
-
-    // else successful
     console.log(result);
-    return router.push("/dashboard");
+    return router.push("/admin");
   };
-
   return (
     <section className="flex-col-center space-y-4">
       <Image
@@ -44,13 +38,13 @@ const LoginPage = () => {
             </label>
             <span className="input-span">
               <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                className=" outline-none "
-                placeholder="Enter Email"
                 onChange={(e) => setEmail(e.target.value)}
+                required
+                type="email"
+                name="email"
+                id="email"
+                placeholder="example@mail.com"
+                className=" outline-none "
               />
             </span>
           </div>
@@ -60,13 +54,13 @@ const LoginPage = () => {
             </label>
             <span className="input-span flex justify-between">
               <input
-                type="password"
-                id="password"
-                name="password"
-                required
-                placeholder="Enter Password"
-                className="outline-none "
                 onChange={(e) => setPassword(e.target.value)}
+                required
+                type="password"
+                name="password"
+                id="password"
+                placeholder="password"
+                className="outline-none "
               />
               <Image
                 src="/makeVisible.svg"
@@ -77,14 +71,14 @@ const LoginPage = () => {
               />
             </span>
             <p className="text-end text-xs text-[#F9C900] cursor-pointer">
-              <Link href="/login/forgotPassword">Forgot password?</Link>
+              <Link href="/login/forgotPassword">Login?</Link>
             </p>
           </div>
-          <Button type="submit" className="login-button" text="Login" />
+          <Button type="submit" className="login-button" text="Signup" />
         </form>
       </div>
     </section>
   );
-};
+}
 
-export default LoginPage;
+export default Page;

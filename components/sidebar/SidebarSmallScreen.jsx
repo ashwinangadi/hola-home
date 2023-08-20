@@ -1,5 +1,5 @@
 "use client";
-import { sidebar } from "@/utility";
+import signOutUser from "@/firebase/auth/signout";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -59,26 +59,79 @@ const SidebarSmallScreen = () => {
             priority
             alt="holaHomeBlack"
           />
-          <span className="w-full">
-            {sidebar?.map((item) => {
-              return (
-                <Link href={item.link} key={item.name}>
-                  <span  className="menu-item py-3 ps-5">
-                    <Image
-                      src={item.icon}
-                      width={20}
-                      height={20}
-                      priority
-                      alt="holaHomeBlack"
-                    />
-                    <p className="text-sm" onClick={() => setModal(false)}>
-                      {item.name}
-                    </p>
-                  </span>
-                </Link>
-              );
-            })}
-          </span>
+
+          <ul className="w-full">
+            <Link href="/dashboard">
+              <li className="menu-item py-3 ps-5">
+                <Image
+                  src="/dashboardIcon.svg"
+                  width={20}
+                  height={20}
+                  priority
+                  alt="holaHomeBlack"
+                />
+                <p
+                  className="text-sm font-semibold"
+                  onClick={() => setModal(false)}
+                >
+                  Dashboard
+                </p>
+              </li>
+            </Link>
+            <Link href="/manage_user">
+              <li className="menu-item py-3 ps-5">
+                <Image
+                  src="/mUserIcon.svg"
+                  width={20}
+                  height={20}
+                  priority
+                  alt="holaHomeBlack"
+                />
+                <p
+                  className="text-sm font-semibold"
+                  onClick={() => setModal(false)}
+                >
+                  Manage Users
+                </p>
+              </li>
+            </Link>
+            <Link href="/notification">
+              <li className="menu-item py-3 ps-5">
+                <Image
+                  src="/notificationIcon.svg"
+                  width={20}
+                  height={20}
+                  priority
+                  alt="holaHomeBlack"
+                />
+                <p
+                  className="text-sm font-semibold"
+                  onClick={() => setModal(false)}
+                >
+                  Notification
+                </p>
+              </li>
+            </Link>
+
+            <Link href="/">
+              <li
+                className="menu-item py-3 ps-5 cursor-pointer"
+                onClick={async () => {
+                  await signOutUser();
+                  setModal(false);
+                }}
+              >
+                <Image
+                  src="/logoutIcon.svg"
+                  width={20}
+                  height={20}
+                  priority
+                  alt="holaHomeBlack"
+                />
+                <p className="text-sm font-semibold">Logout</p>
+              </li>
+            </Link>
+          </ul>
         </div>
       </div>
     </div>

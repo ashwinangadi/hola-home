@@ -1,23 +1,30 @@
+// import { useAuthContext } from "@/context/AuthContext";
+// const { user, setUser } = useAuthContext()
+
 export const sidebar = [
   {
     icon: "/dashboardIcon.svg",
     name: "Dashboard",
-    link: "/dashboard"
+    link: "/dashboard",
+    function : ()=>console.log('Dashboard')
   },
   {
     icon: "/mUserIcon.svg",
     name: "Manage Users",
-    link: "/manage_user"
+    link: "/manage_user",
+    function : ()=>console.log('Manage')
   },
   {
     icon: "/notificationIcon.svg",
     name: "Notification",
-    link: "/notification"
+    link: "/notification",
+    function : ()=>console.log('Notification')
   },
   {
     icon: "/logoutIcon.svg",
     name: "Logout",
-    link: "/dashboard"
+    link: "/dashboard",
+    function : ()=> setUser(null)
   },
 ];
 

@@ -48,8 +48,8 @@
 .flex-col-center {
   @apply flex flex-col items-center justify-center;
 }
-.flex-col-start{
-  @apply flex flex-col items-start justify-start
+.flex-col-start {
+  @apply flex flex-col items-start justify-start;
 }
 .input-span {
   @apply border py-2 text-xs md:text-sm px-4 rounded-md;
@@ -72,12 +72,30 @@
 .cards {
   @apply flex-center translate-x-1 md:translate-x-2 p-2 bg-white space-x-5 md:space-x-10  w-[160px]  md:w-[300px] md:h-[130px] lg:w-[170px] xl:w-[268px] rounded-xl shadow-md;
 }
+.dashboard-cards{
+  @apply grid grid-cols-2 lg:grid-cols-4 justify-items-center gap-3 md:gap-10 px-[25px] md:px-[50px]
+}
+.dashboard-button{
+  @apply py-[18px] px-[30px] md:mt-10 bg-[#FCCF12] rounded-[35px] text-xs md:text-[22px] font-semibold text-white
+}
 .menu-modal {
   @apply shadow-2xl shadow-[#202742] w-[200px] left-0 top-0 bg-white h-screen absolute lg:hidden z-40;
 }
 .menu-item {
   @apply flex space-x-3 hover:bg-[#FFE471];
 }
-.sidebar{
-  @apply min-w-[240px] h-screen border hidden lg:block shadow-lg
+.sidebar {
+  @apply min-w-[240px] h-screen border hidden lg:block shadow-lg;
+}
+.resetpass-section {
+  @apply text-center space-y-4 md:space-y-6 min-h-screen;
+}
+.back-login{
+  @apply flex-center space-x-5 text-[#828282] text-sm md:text-lg font-normal
+}
+.text-reset{
+  @apply text-[#828282] text-base md:text-xl font-normal
+}
+.blank-page{
+  @apply text-center text-5xl font-extrabold mt-10
 }

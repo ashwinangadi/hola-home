@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const ResetPass = () => {
   return (
-    <section className="flex-col-center text-center space-y-4 md:space-y-6 min-h-screen">
+    <section className="flex-col-center resetpass-section">
       <Image
         src="/mailWithCircles.png"
         width={65}
@@ -12,11 +12,11 @@ const ResetPass = () => {
         alt="hide/visible"
       />
       <p className="text-xl md:text-3xl font-semibold">Check your email</p>
-      <span className="text-[#828282] text-base md:text-xl font-normal">
+      <span className="text-reset">
         <p>We sent a password resent link to</p>
         <p>johndoe@gmail.com</p>
       </span>
-      <span className="flex-center space-x-5 text-[#828282] text-sm md:text-lg font-normal">
+      <span className="back-login">
       <Link href="/"><Image
           src="/arrowBack.svg"
           width={25}
