@@ -78,7 +78,7 @@ const SidebarSmallScreen = () => {
                 </p>
               </li>
             </Link>
-            <Link href="/manage_user">
+            <Link href="/dashboard/manage_user">
               <li className="menu-item py-3 ps-5">
                 <Image
                   src="/mUserIcon.svg"
@@ -95,7 +95,7 @@ const SidebarSmallScreen = () => {
                 </p>
               </li>
             </Link>
-            <Link href="/notification">
+            <Link href="/dashboard/notification">
               <li className="menu-item py-3 ps-5">
                 <Image
                   src="/notificationIcon.svg"

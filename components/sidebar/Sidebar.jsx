@@ -27,7 +27,7 @@ const Sidebar = () => {
               <p className="text-sm font-semibold">Dashboard</p>
             </li>
           </Link>
-          <Link href="/manage_user">
+          <Link href="/dashboard/manage_user">
             <li className="menu-item py-5 ps-9">
               <Image
                 src="/mUserIcon.svg"
@@ -39,7 +39,7 @@ const Sidebar = () => {
               <p className="text-sm font-semibold">Manage Users</p>
             </li>
           </Link>
-          <Link href="/notification">
+          <Link href="/dashboard/notification">
             <li className="menu-item py-5 ps-9">
               <Image
                 src="/notificationIcon.svg"

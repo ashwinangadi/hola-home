@@ -6,7 +6,7 @@ import { useAuthContext } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-const Notification = () => {
+const ManageUser = () => {
   const { user } = useAuthContext();
   const router = useRouter();
 
@@ -15,14 +15,9 @@ const Notification = () => {
   }, [user]);
 
   return (
-    <section className="flex">
-      <Sidebar />
-      <div className="w-full space-y-10">
-        <Header name="Notification" />
-        <p className="blank-page">No Notifications</p>
-      </div>
-    </section>
+    <>
+      <p className="blank-page">No Users</p>
+    </>
   );
 };
-
-export default Notification;
+export default ManageUser;
