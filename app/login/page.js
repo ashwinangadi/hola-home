@@ -34,7 +34,6 @@ const LoginPage = () => {
     } else {
       setIsPasswordValid(isValidPassword(inputPassword));
     }
-    console.log("sdfgsdfg", isPasswordValid);
   };
 
   const handleForm = async (event) => {
