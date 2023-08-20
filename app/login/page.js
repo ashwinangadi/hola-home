@@ -7,10 +7,35 @@ import signIn from "@/firebase/auth/signIn";
 import { useRouter } from "next/navigation";
 import Button from "@/components/button/Button";
 
+import { isValidEmail, isValidPassword } from "@/utility";
+
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isEmailValid, setIsEmailValid] = useState(true);
+  const [isPasswordValid, setIsPasswordValid] = useState(true);
   const router = useRouter();
+
+  const handleEmailChange = (e) => {
+    const inputEmail = e.target.value;
+    setEmail(inputEmail);
+    if (inputEmail.length <= 0) {
+      setIsEmailValid(true);
+    } else {
+      setIsEmailValid(isValidEmail(inputEmail));
+    }
+  };
+
+  const handlePasswordChange = (e) => {
+    const inputPassword = e.target.value;
+    setPassword(inputPassword);
+    if (inputPassword.length <= 0) {
+      setIsPasswordValid(true);
+    } else {
+      setIsPasswordValid(isValidPassword(inputPassword));
+    }
+    console.log("sdfgsdfg", isPasswordValid);
+  };
 
   const handleForm = async (event) => {
     event.preventDefault();
@@ -42,23 +67,38 @@ const LoginPage = () => {
             <label htmlFor="email" className="lable">
               Email
             </label>
-            <span className="input-span">
+            <span
+              className={`input-span ${
+                isEmailValid ? "border" : "border-red-500"
+              }`}
+            >
               <input
                 type="email"
                 id="email"
                 name="email"
                 required
-                className=" outline-none "
+                className="outline-none"
                 placeholder="Enter Email"
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={handleEmailChange}
               />
+              <p
+                className={`absolute text-[10px] pt-1 text-red-500 ${
+                  isEmailValid && "hidden"
+                }`}
+              >
+                Please enter a valid email address
+              </p>
             </span>
           </div>
           <div className="form-div">
             <label htmlFor="password" className="lable">
               Password
             </label>
-            <span className="input-span flex justify-between">
+            <span
+              className={`input-span flex justify-between ${
+                isPasswordValid ? "border" : "border"
+              }`}
+            >
               <input
                 type="password"
                 id="password"
@@ -66,7 +106,7 @@ const LoginPage = () => {
                 required
                 placeholder="Enter Password"
                 className="outline-none "
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={handlePasswordChange}
               />
               <Image
                 src="/makeVisible.svg"
@@ -76,6 +116,13 @@ const LoginPage = () => {
                 className="cursor-pointer"
               />
             </span>
+            {/* <p
+                className={`absolute text-[10px] pt-2 text-red-500 ${
+                  isPasswordValid && "hidden"
+                }`}
+              >
+                Password must contain only letters then numbers
+              </p> */}
             <p className="text-end text-xs text-[#F9C900] cursor-pointer">
               <Link href="/login/forgotPassword">Forgot password?</Link>
             </p>

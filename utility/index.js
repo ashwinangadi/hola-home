@@ -50,3 +50,13 @@ export const cards = [
     icon:"/bookingsIcon.svg"
   },
 ]
+
+export function isValidEmail(email) {
+  const emailRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+  return emailRegex.test(email);
+}
+
+export function isValidPassword(password) {
+  const emailRegex = /^[0-9a-zA-Z]+$/;
+  return emailRegex.test(email);
+}
