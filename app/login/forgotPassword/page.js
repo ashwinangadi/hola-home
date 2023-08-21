@@ -1,6 +1,7 @@
 "use client";
 import Button from "@/components/button/Button";
 import { isValidEmail } from "@/utility";
+import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -55,9 +56,7 @@ const ForgotPassword = () => {
             <label htmlFor="first" className="lable">
               Email
             </label>
-            <span className={`input-span ${
-                isEmailValid ? "border" : "border-red-500"
-              }`}>
+            <span className={clsx(["input-span", { "border-red-500": !isEmailValid }])}>
               <input
                 type="text"
                 id="first"

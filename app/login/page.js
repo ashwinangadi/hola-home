@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import Button from "@/components/button/Button";
 
 import { isValidEmail, isValidPassword } from "@/utility";
+import clsx from "clsx";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -50,6 +51,10 @@ const LoginPage = () => {
     return router.push("/dashboard");
   };
 
+  // const vaild = clsx({
+  //   [classes.red-border] : isEmailValid
+  // })
+
   return (
     <section className="flex-col-center space-y-4">
       <Image
@@ -67,9 +72,7 @@ const LoginPage = () => {
               Email
             </label>
             <span
-              className={`input-span ${
-                isEmailValid ? "border" : "border-red-500"
-              }`}
+              className={clsx(["input-span", { "border-red-500": !isEmailValid }])}
             >
               <input
                 type="email"
@@ -93,10 +96,7 @@ const LoginPage = () => {
             <label htmlFor="password" className="lable">
               Password
             </label>
-            <span
-              className={`input-span flex justify-between ${
-                isPasswordValid ? "border" : "border"
-              }`}
+            <span className={clsx(["input-span flex justify-between", { "border": !isPasswordValid }])}
             >
               <input
                 type="password"
